@@ -18,12 +18,12 @@ $products = [
     <h1 class="text-3xl font-bold text-[var(--color-primary)] mb-6">Shop</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <?php foreach ($products as $product): ?>
-            <div class="border rounded-lg p-4 shadow hover:shadow-lg transition bg-white">
+            <a href="product.php?id=<?= $product['id'] ?>" class="block border rounded-lg p-4 shadow hover:shadow-lg transition bg-white">
                 <img src="<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name']) ?>" class="w-full h-40 object-cover mb-3 rounded" />
                 <h3 class="text-lg font-semibold mb-1"><?= htmlspecialchars($product['name']) ?></h3>
                 <p class="text-[var(--color-primary)] font-bold mb-2">$<?= number_format($product['price'], 2) ?></p>
                 <button class="w-full bg-[var(--color-secondary)] text-white py-2 rounded hover:bg-[var(--color-primary)] transition">Add to Cart</button>
-            </div>
+            </a>
         <?php endforeach; ?>
     </div>
 </main>
